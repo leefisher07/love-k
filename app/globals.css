@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+@layer base {
+  :root {
+    /* === Design Spec Colors (direct hex mapped to HSL) === */
+
+    /* Primary: 朱砂红 #C0392B */
+    --primary: 6 63% 46%;
+    --primary-foreground: 30 20% 96%;
+
+    /* Background: 宣纸米色 #FAF8F3 */
+    --background: 40 47% 97%;
+    --foreground: 210 29% 24%;
+
+    /* Card: 白色 #FFFFFF */
+    --card: 0 0% 100%;
+    --card-foreground: 210 29% 24%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 29% 24%;
+
+    /* Secondary */
+    --secondary: 40 47% 97%;
+    --secondary-foreground: 210 12% 43%;
+
+    /* Muted */
+    --muted: 180 2% 93%;
+    --muted-foreground: 204 8% 53%;
+
+    /* Accent: 鎏金色 #D4AF37 */
+    --accent: 43 66% 52%;
+    --accent-foreground: 210 29% 24%;
+
+    /* Destructive: #E74C3C */
+    --destructive: 6 78% 57%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders: #ECF0F1 light, #BDC3C7 normal */
+    --border: 180 2% 93%;
+    --input: 180 2% 93%;
+    --ring: 6 63% 46%;
+
+    /* Charts */
+    --chart-1: 6 63% 46%;
+    --chart-2: 204 70% 53%;
+    --chart-3: 43 66% 52%;
+    --chart-4: 27 87% 52%;
+    --chart-5: 145 63% 42%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar (unused but required) */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 29% 24%;
+    --sidebar-primary: 6 63% 46%;
+    --sidebar-primary-foreground: 30 20% 96%;
+    --sidebar-accent: 180 2% 93%;
+    --sidebar-accent-foreground: 210 29% 24%;
+    --sidebar-border: 180 2% 93%;
+    --sidebar-ring: 6 63% 46%;
+
+    /* === Custom Design Tokens === */
+    --color-primary-red: #C0392B;
+    --color-primary-red-hover: #A93226;
+    --color-primary-red-active: #922B21;
+    --color-primary-red-light: #E8B4AE;
+    --color-primary-red-lighter: #F9E7E5;
+
+    --color-text-primary: #2C3E50;
+    --color-text-secondary: #5D6D7E;
+    --color-text-tertiary: #95A5A6;
+    --color-text-disabled: #BDC3C7;
+
+    --color-bg-paper: #FAF8F3;
+    --color-bg-card: #FFFFFF;
+
+    --color-horse-gold: #D4AF37;
+    --color-horse-fire: #E67E22;
+    --color-horse-fire-light: #F39C12;
+
+    --color-success: #27AE60;
+    --color-warning: #F39C12;
+    --color-error: #E74C3C;
+    --color-info: #3498DB;
+
+    --color-border-light: #ECF0F1;
+    --color-border-normal: #BDC3C7;
+
+    --color-chart-user1: #C0392B;
+    --color-chart-user2: #3498DB;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-paper);
+  }
+}
+
+/* Compass rotation animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
